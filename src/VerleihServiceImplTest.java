@@ -62,9 +62,16 @@ public class VerleihServiceImplTest
         }
     }
 
+    // TODO Aufgabe 1.5.1 und 1.5.3
+    // Test ob die Medien wirklich verliehen sind.
     @Test
-    public void testNochEinTestFall1()
+    public void testAllesIstVerliehen()
     {
+    	List<Medium> selectedMedien = new ArrayList<Medium>();
+    	selectedMedien.add(_abbey);
+    	selectedMedien.add(_shape);
+    	_verleihService.verleiheAn(_brian, selectedMedien, Datum.heute());
+    	assertTrue(_verleihService.sindAlleVerliehen(selectedMedien));
     }
 
     @Test

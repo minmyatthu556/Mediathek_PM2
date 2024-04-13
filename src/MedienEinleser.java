@@ -159,7 +159,7 @@ class MedienEinleser
         String titel = naechsterToken(tokenizer);
         String kommentar = naechsterToken(tokenizer);
 
-        Medium medium = null;
+        Medium medium = null; // Statischer Typ
         if (medienBezeichnung.equals("CD"))
         {
             String interpret = naechsterToken(tokenizer);
@@ -179,7 +179,7 @@ class MedienEinleser
         {
             String system = naechsterToken(tokenizer);
 
-            // medium = new Videospiel(titel, kommentar, system);
+            medium = new Videospiel(titel, kommentar, system);  // Dynamischer Typ
         }
         return medium;
     }

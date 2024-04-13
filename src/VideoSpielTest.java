@@ -7,12 +7,9 @@ import org.junit.Test;
 public class VideoSpielTest {
 	private static final String KOMMENTAR = "Kommentar";
     private static final String TITEL = "Titel";
-    private static final String BEZEICHNUNG = "Video Spiel";
-    private static final String STUDIO = "Game Studio";
-    private static final String KONSOLE = "Game Konsole";
-    private static final String KATEGORIE = "Kategorie";
+    private static final String BEZEICHNUNG = "Videospiel";
+    private static final String SYSTEM = "Game Konsole";
     private Videospiel _vs1;
-    private Videospiel _vs2;
     
     public VideoSpielTest()
     {
@@ -27,9 +24,29 @@ public class VideoSpielTest {
         assertEquals(bezeichnung, _vs1.getMedienBezeichnung());
     }
 
+    @Test
+    public void testGetTitel()
+    {
+    	String titel = TITEL;
+    	assertEquals(titel, _vs1.getTitel());
+    }
+    
+    @Test
+    public void testGetKommentar()
+    {
+    	String kommentar = KOMMENTAR;
+    	assertEquals(kommentar, _vs1.getKommentar());
+    }
+    
+    @Test 
+    public void testGetSystem()
+    {
+    	String system = SYSTEM;
+    	assertEquals(system, _vs1.getSystem());
+    }
     
     private Videospiel getMedium()
     {
-    	return new Videospiel(TITEL, KONSOLE, STUDIO, KATEGORIE, KOMMENTAR);
+    	return new Videospiel(TITEL, KOMMENTAR, SYSTEM);
     }
 }

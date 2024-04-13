@@ -103,4 +103,14 @@ class DVD implements Medium
         return _titel;
     }
 
+	@Override
+	public String getFormatiertenString() {
+		// TODO Auto-generated method stub
+		return "Titel: " +  getTitel() +
+        		"\nRegisseur: " + getRegisseur() +
+        		"\nLaufzeit: " + getLaufzeit() +
+        		"\nKommentar: " + getKommentar() + "\n" +
+                		"--------------------\n";
+	}
+
 }

@@ -40,6 +40,15 @@ class Videospiel implements Medium
 		return "Videospiel";
 	}
 
+	@Override
+	public String getFormatiertenString() {
+		// TODO Auto-generated method stub
+		return "Titel: " +  getTitel() +
+        		"\nSystem: " + getSystem() +
+        		"\nKommentar: " + getKommentar() + "\n" +
+        		"--------------------\n";
+	}
+
 	
 
 }

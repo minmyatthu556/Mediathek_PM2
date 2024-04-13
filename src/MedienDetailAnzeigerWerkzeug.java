@@ -38,39 +38,48 @@ class MedienDetailAnzeigerWerkzeug
         
         for (Medium medium : medien)
         {
-        	switch(medium.getMedienBezeichnung())
-        	{
-        	case "CD": 
-        	{
-        		CD cd = (CD) medium;
-        		selectedMedienTextArea.setText("Titel: " +  cd.getTitel() +
-        				"\nInterpret: " + cd.getInterpret() +
-        				"\nSpiellänge: " + cd.getSpiellaenge() +
-        				"\nKommentar: " + cd.getKommentar() + "\n"
-        				); break;
-        	}
-        	
-        	case "DVD":
-        	{
-        		DVD dvd = (DVD) medium;
-        		selectedMedienTextArea.setText("Titel: " +  dvd.getTitel() +
-                		"\nRegisseur: " + dvd.getRegisseur() +
-                		"\nLaufzeit: " + dvd.getLaufzeit() +
-                		"\nKommentar: " + dvd.getKommentar() + "\n"
-                		); break;
-        	}
-        	case "Videospiel":
-        	{
-        		Videospiel vs = (Videospiel) medium;
-        		selectedMedienTextArea.setText("Titel: " +  vs.getTitel() +
-                		"\nSystem: " + vs.getSystem() +
-                		"\nKommentar: " + vs.getKommentar() + "\n"
-                		); break;
-        	}
-        	}
+        	selectedMedienTextArea.appendText(medium.getFormatiertenString());
         }
         
-    }
+        	
+      }
+        
+//   public void setMedien(List<Medium> medien)
+//   {
+//       assert medien != null : "Vorbedingung verletzt: (medien != null)";
+//            
+//            
+//       TextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+//       selectedMedienTextArea.setText("");
+//            
+//       for (Medium medium : medien)
+//       {
+//	     	if (medium instanceof CD) 
+//       			{
+//	            		CD cd = (CD) medium;
+//	            		selectedMedienTextArea.setText("Titel: " +  cd.getTitel() +
+//								"\nInterpret: " + cd.getInterpret() +
+//								"\nSpiellänge: " + cd.getSpiellaenge() +
+//								"\nKommentar: " + cd.getKommentar() + "\n");
+//	        		} 
+//        			else if (medium instanceof DVD) 
+//        			{
+//	            		DVD dvd = (DVD) medium;
+//	            		selectedMedienTextArea.setText("Titel: " +  dvd.getTitel() +
+//								"\nRegisseur: " + dvd.getRegisseur() +
+//								"\nLaufzeit: " + dvd.getLaufzeit() +
+//								"\nKommentar: " + dvd.getKommentar() + "\n");
+//	       			} 
+//        			else if (medium instanceof Videospiel) 
+//        			{
+//	            		Videospiel videospiel = (Videospiel) medium;
+//	            		selectedMedienTextArea.setText("Titel: " +  vs.getTitel() +
+//								"\nSystem: " + vs.getSystem() +
+//								"\nKommentar: " + vs.getKommentar() + "\n");
+//	        		}
+//            	
+//            }
+//		}
 
     /**
      * Gibt das Panel dieses Subwerkzeugs zurück.

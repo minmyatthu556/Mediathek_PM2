@@ -100,4 +100,14 @@ class CD implements Medium
         return _titel;
     }
 
+	@Override
+	public String getFormatiertenString() {
+		// TODO Auto-generated method stub
+		return "Titel: " +  getTitel() +
+				"\nInterpret: " + getInterpret() +
+				"\nSpiellänge: " + getSpiellaenge() +
+				"\nKommentar: " + getKommentar() + "\n" +
+		        		"--------------------\n";
+	}
+
 }

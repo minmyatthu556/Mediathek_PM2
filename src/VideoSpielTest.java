@@ -10,6 +10,7 @@ public class VideoSpielTest {
     private static final String BEZEICHNUNG = "Videospiel";
     private static final String SYSTEM = "Game Konsole";
     private Videospiel _vs1;
+    private Videospiel _vs2;
     
     public VideoSpielTest()
     {
@@ -25,24 +26,20 @@ public class VideoSpielTest {
     }
 
     @Test
-    public void testGetTitel()
+    public void testKonstruktor()
     {
-    	String titel = TITEL;
-    	assertEquals(titel, _vs1.getTitel());
+        assertEquals(TITEL, _vs1.getTitel());
+        assertEquals(KOMMENTAR, _vs1.getKommentar());
+        assertEquals(SYSTEM, _vs1.getSystem());
     }
     
     @Test
-    public void testGetKommentar()
+    public void testEquals()
     {
-    	String kommentar = KOMMENTAR;
-    	assertEquals(kommentar, _vs1.getKommentar());
-    }
-    
-    @Test 
-    public void testGetSystem()
-    {
-    	String system = SYSTEM;
-    	assertEquals(system, _vs1.getSystem());
+        assertFalse("Mehrere Exemplare der gleichen CD sind ungleich",
+                _vs1.equals(_vs2));
+        assertTrue("Dasselbe Exemplare der gleichen CD ist gleich",
+                _vs1.equals(_vs1));
     }
     
     private Videospiel getMedium()

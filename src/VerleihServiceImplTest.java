@@ -2,6 +2,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
@@ -62,26 +63,31 @@ public class VerleihServiceImplTest
         }
     }
 
-    // TODO Aufgabe 1.5.1 und 1.5.3
-    // Test ob die Medien wirklich verliehen sind.
     @Test
-    public void testAllesIstVerliehen()
+    public void testMedienVerliehen()
     {
-    	List<Medium> selectedMedien = new ArrayList<Medium>();
-    	selectedMedien.add(_abbey);
-    	selectedMedien.add(_shape);
-    	_verleihService.verleiheAn(_brian, selectedMedien, Datum.heute());
-    	assertTrue(_verleihService.sindAlleVerliehen(selectedMedien));
-    }
+    	 List<Medium> medien= new LinkedList<Medium>();
+    	 medien.add(_abbey);
+    	 medien.add(_bad);
+    	 Datum datum = new Datum (03,03,2005);
+    	 _verleihService.verleiheAn(_brian, medien, datum );
+    	 assertTrue(_verleihService.istVerliehen(_abbey));
+    	 assertTrue(_verleihService.istVerliehen(_bad));
+    	 assertFalse(_verleihService.istVerliehen(_shape));
 
-    @Test
-    public void testNochEinTestFall2()
-    {
+    	 
     }
-
+    
     @Test
-    public void testNochEinTestFall3()
+    public void testZurueknehmen()
     {
+    	Datum datum = new Datum (03,03,2006);
+    	testMedienVerliehen();
+    	List<Medium> medien= new LinkedList<Medium>();
+   	 	medien.add(_abbey);
+   	   _verleihService.nimmZurueck(medien, datum);
+   	  assertFalse(_verleihService.istVerliehen(_abbey));
+   	  assertTrue(_verleihService.medienImBestand(medien));
     }
 
     private void setUpKunden()

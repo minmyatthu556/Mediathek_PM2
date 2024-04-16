@@ -55,7 +55,7 @@ public final class Datum implements Comparable<Datum>
     	return new Datum(tag,monat,jahr);
     }
 
-    private Datum(int tag, int monat, int jahr)
+    public Datum(int tag, int monat, int jahr)
     {
         _tag = tag;
         _monat = monat;

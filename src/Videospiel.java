@@ -48,7 +48,4 @@ class Videospiel implements Medium
         		"\nKommentar: " + getKommentar() + "\n" +
         		"--------------------\n";
 	}
-
-	// hadia hat hier was geändert.
-
 }

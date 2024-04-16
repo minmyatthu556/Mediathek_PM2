@@ -81,13 +81,17 @@ public class VerleihServiceImplTest
     @Test
     public void testZurueknehmen()
     {
-    	Datum datum = new Datum (03,03,2006);
-    	testMedienVerliehen();
-    	List<Medium> medien= new LinkedList<Medium>();
-   	 	medien.add(_abbey);
-   	   _verleihService.nimmZurueck(medien, datum);
-   	  assertFalse(_verleihService.istVerliehen(_abbey));
-   	  assertTrue(_verleihService.medienImBestand(medien));
+    	 List<Medium> medien1= new LinkedList<Medium>();
+    	 medien1.add(_abbey);
+   	 	 medien1.add(_bad);
+   	 	 Datum datum1 = new Datum (03,03,2005);
+   	 	 _verleihService.verleiheAn(_brian, medien1, datum1 );
+    	 Datum datum = new Datum (03,03,2006);
+    	 List<Medium> medien= new LinkedList<Medium>();
+   	 	 medien.add(_abbey);
+   	     _verleihService.nimmZurueck(medien, datum);
+   	     assertFalse(_verleihService.istVerliehen(_abbey));
+   	     assertTrue(_verleihService.medienImBestand(medien));
     }
 
     private void setUpKunden()

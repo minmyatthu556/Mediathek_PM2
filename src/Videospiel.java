@@ -49,6 +49,6 @@ class Videospiel implements Medium
         		"--------------------\n";
 	}
 
-	
+	// hadia hat hier was geändert.
 
 }
